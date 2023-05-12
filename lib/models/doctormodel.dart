@@ -1,6 +1,8 @@
+import 'package:finalyearproject/models/hospital.dart';
+
 class DoctorModel {
   final int age;
-  final List<String> hospital;
+  final List<HospitalModel> hospital;
   final String id;
   final String name;
   final String phone;

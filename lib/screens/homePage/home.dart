@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      endDrawer: draw(),
+      endDrawer: draw(context),
       body: HomeGrid(),
     );
   }

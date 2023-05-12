@@ -23,7 +23,7 @@ class ResultPage extends StatelessWidget {
           ),
         ),
       ),
-      endDrawer: draw(),
+      endDrawer: draw(context),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -165,7 +165,9 @@ class ResultPage extends StatelessWidget {
                   minimumSize:
                       Size(MediaQuery.of(context).size.width * 0.7, 56),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed("/symptom");
+                },
                 child: const Text(
                   "Start New Check up",
                   style: TextStyle(

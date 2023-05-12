@@ -1,11 +1,13 @@
 import '../models/doctormodel.dart';
+import './hospital.dart';
 
-List<DoctorModel> doctorData = const [
+List<DoctorModel> doctorData = [
   DoctorModel(
       age: 43,
-      hospital: [
-        'Dream care General Hospital',
-      ],
+      hospital: [hospitalData[0]],
+      // hospital: [
+      //   'Dream care General Hospital',
+      // ],
       id: 'doc0001',
       name: 'Bereket Asefa',
       phone: '090909090909',
@@ -20,9 +22,7 @@ List<DoctorModel> doctorData = const [
       link: 'linkedin.com/in/yitayih-berhane-076b0676'),
   DoctorModel(
       age: 36,
-      hospital: [
-        'Felege Hiwot Hospital',
-      ],
+      hospital: [hospitalData[2]],
       id: 'doc0002',
       name: 'Abebe Teferi',
       phone: '090409090909',
@@ -37,12 +37,7 @@ List<DoctorModel> doctorData = const [
       link: 'linkedin.com/in/yitayih-berhane-076b0676'),
   DoctorModel(
     age: 30,
-    hospital: [
-      'Gambi Hospital',
-      'Dream Care Hospital',
-      'Gambi Hospital',
-      'Dream Care Hospital',
-    ],
+    hospital: [hospitalData[1]],
     id: 'doc0003',
     name: 'Aster Jhon',
     phone: '0901010101',
@@ -57,9 +52,7 @@ List<DoctorModel> doctorData = const [
   ),
   DoctorModel(
     age: 39,
-    hospital: [
-      'Dream care General Hospital',
-    ],
+    hospital: [hospitalData[0]],
     id: 'doc0004',
     name: 'Yonatan Keflu',
     phone: '090909090909',

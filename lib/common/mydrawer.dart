@@ -1,25 +1,38 @@
 import 'package:flutter/material.dart';
+import '../service/menu.dart';
 
-Widget draw() {
+Widget draw(context) {
   return Drawer(
-    child: ListView(
-      padding: EdgeInsets.zero,
-      children: [
-        const DrawerHeader(
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(46, 67, 120, 1),
-          ),
-          child: Text('Medical App'),
-        ),
-        ListTile(
-          title: const Text('Item 1'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Item 2'),
-          onTap: () {},
-        ),
-      ],
+    backgroundColor: const Color.fromRGBO(46, 67, 120, 1),
+    child: Column(
+      children: menuData
+          .map((e) => Card(
+                elevation: 0,
+                color: const Color.fromRGBO(46, 67, 120, 1),
+                child: ListTile(
+                  title: Text(
+                    e.title,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Inter'),
+                  ),
+                  leading: Image.asset(
+                    e.imgUrl,
+                    width: 40,
+                    height: 40,
+                  ),
+                  onTap: () {
+                    if (e.title == 'Symptom Checker') {
+                      Navigator.of(context)
+                          .popUntil(ModalRoute.withName('/home'));
+                      Navigator.of(context).pushNamed('/symptom');
+                    }
+                  },
+                ),
+              ))
+          .toList(),
     ),
   );
 }

@@ -25,7 +25,7 @@ class DoctorPage extends StatelessWidget {
           ),
         ),
       ),
-      endDrawer: draw(),
+      endDrawer: draw(context),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,7 +91,7 @@ class DoctorPage extends StatelessWidget {
                     children: doctorData[index]
                         .hospital
                         .map((e) => Text(
-                              e,
+                              e.name,
                               style: const TextStyle(
                                   color: Color.fromRGBO(201, 197, 197, 1),
                                   fontSize: 13,
@@ -210,15 +210,18 @@ class DoctorPage extends StatelessWidget {
                           color: Colors.white),
                     ),
                   ),
+                  const SizedBox(
+                    height: 3,
+                  ),
                   const Divider(
-                    height: 2,
+                    height: 4,
                     color: Colors.black,
                   ),
                   const SizedBox(
                     height: 8,
                   ),
                   personalInformation('../../../assets/images/suitcase.png',
-                      doctorData[index].hospital[0]),
+                      doctorData[index].hospital[0].name),
                   personalInformation('../../../assets/images/mail.png',
                       doctorData[index].email),
                   personalInformation('../../../assets/images/phone.png',
@@ -243,7 +246,10 @@ class DoctorPage extends StatelessWidget {
                           minimumSize:
                               Size(MediaQuery.of(context).size.width * 0.7, 56),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/getdirection',
+                              arguments: doctorData[index].hospital[0]);
+                        },
                         child: const Text(
                           "Get Direction",
                           style: TextStyle(

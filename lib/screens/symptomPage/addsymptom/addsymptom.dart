@@ -23,7 +23,7 @@ class AddSymptomPage extends StatelessWidget {
           ),
         ),
       ),
-      endDrawer: draw(),
+      endDrawer: draw(context),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 14, vertical: 17),
         width: size.width,

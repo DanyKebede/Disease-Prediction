@@ -21,7 +21,7 @@ class _GenderSelectState extends State<GenderSelect> {
           },
           child: genderContainer(
               "Female",
-              "../../../assets/images/female.png",
+              "../../../assets/images/girl.png",
               context,
               isSelected == 1 ? const Color.fromRGBO(46, 67, 120, 1) : null),
         ),
@@ -33,7 +33,7 @@ class _GenderSelectState extends State<GenderSelect> {
           },
           child: genderContainer(
               "Male",
-              "../../../assets/images/gender.png",
+              "../../../assets/images/man.png",
               context,
               isSelected == 2 ? const Color.fromRGBO(46, 67, 120, 1) : null),
         )

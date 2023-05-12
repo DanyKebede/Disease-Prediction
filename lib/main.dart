@@ -1,4 +1,5 @@
 import 'package:finalyearproject/screens/result/doctorpage.dart';
+import 'package:finalyearproject/screens/result/getdirectionpage.dart';
 import 'package:finalyearproject/screens/result/resultpage.dart';
 import 'package:finalyearproject/screens/result/showdetail.dart';
 import 'package:finalyearproject/screens/symptomPage/addsymptom/addsymptom.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/result': (context) => const ResultPage(),
         '/detail': (context) => const ShowDetailPage(),
         '/doctor': (context) => const DoctorPage(),
+        '/getdirection': (context) => const GetDirectionPage(),
       },
     );
   }
