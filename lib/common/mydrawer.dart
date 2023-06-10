@@ -28,7 +28,26 @@ Widget draw(context) {
                       Navigator.of(context)
                           .popUntil(ModalRoute.withName('/home'));
                       Navigator.of(context).pushNamed('/symptom');
+                    } else if (e.title == 'Doctors') {
+                      Navigator.of(context)
+                          .popUntil(ModalRoute.withName('/home'));
+                      Navigator.of(context).pushNamed('/doctorpage');
+                    } else if (e.title == 'Hospitals') {
+                      Navigator.of(context)
+                          .popUntil(ModalRoute.withName('/home'));
+                      Navigator.of(context).pushNamed('/hospitalpage');
+                    } else if (e.title == 'Medical Information') {
+                      Navigator.of(context)
+                          .popUntil(ModalRoute.withName('/home'));
+                      Navigator.of(context).pushNamed('/medicalpage');
+                    } else if (e.title == 'First aid') {
+                      Navigator.of(context)
+                          .popUntil(ModalRoute.withName('/home'));
+                      Navigator.of(context).pushNamed('/firstaidpage');
                     }
+                    // Medical Information
+                    // hospitalpage
+                    // firstaidpage
                   },
                 ),
               ))

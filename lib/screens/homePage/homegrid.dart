@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../service/menu.dart';
 
 class HomeGrid extends StatelessWidget {
-  HomeGrid({super.key});
+  const HomeGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,18 @@ class HomeGrid extends StatelessWidget {
           return InkWell(
             borderRadius: BorderRadius.circular(20),
             onTap: () => {
-              if (index == 0) {Navigator.of(context).pushNamed('/symptom')}
+              if (index == 0)
+                {Navigator.of(context).pushNamed('/symptom')}
+              else if (index == 1)
+                {Navigator.of(context).pushNamed('/medicalpage')}
+              else if (index == 2)
+                {Navigator.of(context).pushNamed('/hospitalpage')}
+              else if (index == 3)
+                {Navigator.of(context).pushNamed('/doctorpage')}
+              else if (index == 4)
+                {Navigator.of(context).pushNamed('/firstaidpage')}
+
+              // firstaidpage
             },
             child: Container(
               decoration: BoxDecoration(

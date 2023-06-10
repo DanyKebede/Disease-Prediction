@@ -1,4 +1,8 @@
-import 'package:finalyearproject/models/hospital.dart';
+import 'package:flutter/foundation.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+import '../models/hospital.dart';
 
 List<HospitalModel> hospitalData = const [
   HospitalModel(
@@ -35,3 +39,49 @@ List<HospitalModel> hospitalData = const [
     lng: 37.370369037029654,
   )
 ];
+
+const baseUrl = 'http://10.0.2.2:8000/';
+
+class HospitalProvider extends ChangeNotifier {
+  List<dynamic> hospitaldata = [];
+  List<dynamic> searchResult = [];
+
+  Future<void> loadHospitals() async {
+    try {
+      final hospitals = await fetchHospitals();
+      hospitaldata = hospitals;
+      searchResult = hospitals;
+    } catch (e) {
+      if (kDebugMode) {
+        print('Error loading Hospital: $e');
+      }
+    }
+    notifyListeners();
+  }
+
+  Future<dynamic> fetchHospitalById(int id) async {
+    final hospitaldata =
+        await http.get(Uri.parse('http://10.0.2.2:8000/hospitals/$id'));
+    final data = await json.decode(hospitaldata.body);
+    return HospitalModel.fromJson(data);
+  }
+
+  Future<List<dynamic>> fetchHospitals() async {
+    final hospitaldata = await http.get(Uri.parse('${baseUrl}hospitals/'));
+    final List<dynamic> data = await json.decode(hospitaldata.body);
+
+    return data.map((json) => HospitalModel.fromJson(json)).toList();
+  }
+
+  search(val) {
+    if (val == '') {
+      searchResult = hospitaldata;
+    } else {
+      searchResult = hospitaldata
+          .where((element) =>
+              element.name.toLowerCase().contains(val.toLowerCase()))
+          .toList();
+    }
+    notifyListeners();
+  }
+}

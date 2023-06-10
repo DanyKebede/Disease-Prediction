@@ -19,10 +19,7 @@ class _GenderSelectState extends State<GenderSelect> {
               isSelected = 1;
             });
           },
-          child: genderContainer(
-              "Female",
-              "../../../assets/images/girl.png",
-              context,
+          child: genderContainer("Female", "assets/images/girl.png", context,
               isSelected == 1 ? const Color.fromRGBO(46, 67, 120, 1) : null),
         ),
         InkWell(
@@ -31,10 +28,7 @@ class _GenderSelectState extends State<GenderSelect> {
               isSelected = 2;
             });
           },
-          child: genderContainer(
-              "Male",
-              "../../../assets/images/man.png",
-              context,
+          child: genderContainer("Male", "assets/images/man.png", context,
               isSelected == 2 ? const Color.fromRGBO(46, 67, 120, 1) : null),
         )
       ],

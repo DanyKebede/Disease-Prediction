@@ -37,6 +37,9 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   flutter_map: ^4.0.0
   latlong2: ^0.8.1
+  http: ^0.13.6
+  provider: ^6.0.5
+  fluttertoast: ^8.2.2
 
 dev_dependencies:
   flutter_test:
@@ -60,8 +63,42 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - assets/images/Rectangle.png
+  assets:
+    - assets/json/allDiseases.json
+    - assets/json/FirstAid.json
+    - assets/json/diseasedescription.json
+    - assets/images/add.png
+    - assets/images/Arrow1.png
+    - assets/images/check.png
+    - assets/images/clock.png
+    - assets/images/close.png
+    - assets/images/del.png
+    - assets/images/doctor.png
+    - assets/images/doctorF.png
+    - assets/images/female.png
+    - assets/images/femenine.png
+    - assets/images/first-aid-box.png
+    - assets/images/gender.png
+    - assets/images/girl.png
+    - assets/images/home.png
+    - assets/images/hospital.png
+    - assets/images/house (2).png
+    - assets/images/house.png
+    - assets/images/linkedin.png
+    - assets/images/mail.png
+    - assets/images/man.png
+    - assets/images/Medical information.png
+    - assets/images/medicaldoc.png
+    - assets/images/medRecord.png
+    - assets/images/phone.png
+    - assets/images/placeholder.png
+    - assets/images/Rectangle.png
+    - assets/images/Rectangle2.png
+    - assets/images/Rectangle3.png
+    - assets/images/Rectangle4.png
+    - assets/images/suitcase.png
+    - assets/images/symptomchecker.png
+    - assets/images/suitcase.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

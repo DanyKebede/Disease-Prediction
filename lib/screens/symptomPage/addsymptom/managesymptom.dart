@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../../service/symptom.dart';
 
 class SelectSymptom extends StatefulWidget {
@@ -14,6 +15,7 @@ class _SelectSymptomState extends State<SelectSymptom> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    List selectedSymp = Provider.of<SymptomProvider>(context).selectedSymp;
     return Column(
       children: [
         Visibility(
@@ -41,16 +43,17 @@ class _SelectSymptomState extends State<SelectSymptom> {
                   ),
                   onPressed: () {
                     setState(() {
-                      removeSelected(selectedSymp[index]);
+                      Provider.of<SymptomProvider>(context, listen: false)
+                          .removeSelected(selectedSymp[index]);
                     });
                   },
                   icon: Image.asset(
-                    '../../../assets/images/del.png',
+                    'assets/images/del.png',
                     width: 26,
                     height: 26,
                   ),
                   label: Text(
-                    selectedSymp[index].title,
+                    selectedSymp[index],
                     style: const TextStyle(fontFamily: 'Inter', fontSize: 14),
                   ),
                 );
@@ -74,7 +77,7 @@ class _SelectSymptomState extends State<SelectSymptom> {
                   .then((value) => setState(() {}));
             },
             icon: Image.asset(
-              '../../../assets/images/add.png',
+              'assets/images/add.png',
               width: 26,
               height: 26,
             ),

@@ -8,22 +8,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(46, 67, 120, 1),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        title: const Text(
-          "Medical App",
-          style: TextStyle(
-            fontFamily: 'Inter',
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromRGBO(46, 67, 120, 1),
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          title: const Text(
+            "Medical App",
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
+        endDrawer: draw(context),
+        body: const HomeGrid(),
       ),
-      endDrawer: draw(context),
-      body: HomeGrid(),
     );
   }
 }

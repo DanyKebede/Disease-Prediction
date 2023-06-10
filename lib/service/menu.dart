@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 final List<Menu> menuData = [
   Menu(
     title: 'Symptom Checker',
-    imgUrl: '../../../assets/images/symptomchecker.png',
+    imgUrl: 'assets/images/symptomchecker.png',
     boxColor: const LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
@@ -16,7 +16,7 @@ final List<Menu> menuData = [
   ),
   Menu(
     title: 'Medical Information',
-    imgUrl: '../../../assets/images/medRecord.png',
+    imgUrl: 'assets/images/medRecord.png',
     boxColor: const LinearGradient(
       begin: Alignment.centerRight,
       end: Alignment.bottomLeft,
@@ -28,7 +28,7 @@ final List<Menu> menuData = [
   ),
   Menu(
     title: 'Hospitals',
-    imgUrl: '../../../assets/images/hospital.png',
+    imgUrl: 'assets/images/hospital.png',
     boxColor: const LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.center,
@@ -40,7 +40,7 @@ final List<Menu> menuData = [
   ),
   Menu(
     title: 'Doctors',
-    imgUrl: '../../../assets/images/medicaldoc.png',
+    imgUrl: 'assets/images/medicaldoc.png',
     boxColor: const LinearGradient(
       begin: Alignment.topRight,
       end: Alignment.center,
@@ -52,7 +52,7 @@ final List<Menu> menuData = [
   ),
   Menu(
     title: 'First aid',
-    imgUrl: '../../../assets/images/first-aid-box.png',
+    imgUrl: 'assets/images/first-aid-box.png',
     boxColor: const LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.center,
